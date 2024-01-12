@@ -31,10 +31,37 @@ html,body{overflow:hidden;height:100%;}
 header .logo_box{position: absolute; right: 35px; top: 75px;}
 header .logo_box img{width: 100px;}
 #wrap header{width:180px; height: 100%; position: fixed; right:0px; top: 0px;background:url(../images/menu_bg1.png) repeat-y; z-index: 11;}
+#wrap header nav{width:100%; height: 100%; display: flex;}
+#wrap header nav ul{width: 100%; height: 100%; display: flex; flex-direction: column; justify-content: center;}
+#wrap header nav ul li{margin: 0px 0px 10px 30px; padding-left: 15px; position:relative;}
+#wrap header nav ul li a{font-size: 16px; color: #fff; font-weight: 600; line-height: 30px;}
+#wrap header nav ul li:after{content:""; display: block; width:5px; height: 5px; border-radius: 50%; background: #fff; position:absolute; left:0px; top:13px;}
+#wrap header nav ul li:hover a,#wrap header nav ul li.on a{color: #ed3140;}
+#wrap header nav ul li:hover:after, #wrap header nav ul li.on:after{background: #ed3140;}
+
+footer{width:180px; position:fixed; right:0px; bottom:0px; padding: 0px 20px 30px 20px;
+font-size: 11px; color:#7e7e7e; z-index: 12;}
+footer address{padding: 0px 0px 15px 0px;}
+footer > a{display:block; width:16px; height: 16px; position: absolute; top:-31px; transition: .4s;}
+footer > a.face{background: url(../images/social_b_facebook.png) no-repeat; right:18px;}
+footer > a.face:hover{background: url(../images/social_b_facebook_hover.png) no-repeat;}
+
+footer > a.twit{background: url(../images/social_b_twitter.png) no-repeat; right: 48px;}
+footer > a.twit:hover{background: url(../images/social_b_twitter_hover.png) no-repeat;}
+
+footer > a.instar{background: url(../images/social_b_instar.png) no-repeat; right: 80px;}
+footer > a.instar:hover{background: url(../images/social_b_instar_hover.png) no-repeat;}
+
 
 /*
-position: fixed; 스타일을 적용한 요소는 일반적인 문서 흐름에서 벗어나, 브라우저 뷰포트에 상대적으로 위치합니다. 
-이 경우, header는 뷰포트의 오른쪽 끝 (right: 0px;)에 고정됩니다. 
+content 속성은 가상 요소에 들어갈 내용을 지정합니다. 여기서는 빈 문자열("")로 설정되어 실제 내용은 없습니다.
+
+display: block;:display 속성은 요소의 박스 타입을 설정합니다. block은 블록 레벨 요소로 만듭니다.
+
+width: 5px; height: 5px;:가상 요소의 너비와 높이를 각각 5픽셀로 설정합니다.
+border-radius: 50%;: border-radius 속성은 모서리의 둥근 정도를 설정합니다. 50%는 완전한 원형을 만듭니다.
+
+position: fixed; 스타일을 적용한 요소는 일반적인 문서 흐름에서 벗어나, 브라우저 뷰포트에 상대적으로 위치합니다. 이 경우, header는 뷰포트의 오른쪽 끝 (right: 0px;)에 고정됩니다. 
 따라서 #wrap 내부의 다른 요소들이 오른쪽으로 180픽셀 만큼의 여백을 가지더라도, header는 이 영향을 받지 않고 항상 뷰포트의 오른쪽 끝에 위치하게 됩니다.
 이러한 스타일링은 사이드바를 만들거나, 항상 보이는 헤더/푸터 등을 구현할 때 자주 사용됩니다. 
 #wrap 내부에 있는 다른 콘텐츠들은 padding-right: 180px;으로 인해 header와 겹치지 않게 됩니다.
